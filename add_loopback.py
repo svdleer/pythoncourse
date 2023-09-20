@@ -29,6 +29,10 @@ from ncclient import manager
 import xmltodict
 import xml.dom.minidom
 
+host = 'sandbox-iosxe-latest-1.cisco.com'
+user = 'admin'
+password = 'C1sco12345'
+netconf_port = 830
 
 # Get the absolute path for the directory where this file is located "here"
 here = os.path.abspath(os.path.dirname(__file__))
@@ -76,11 +80,6 @@ new_loopback["type"] = IETF_INTERFACE_TYPES["loopback"]
 new_loopback["status"] = "true"
 new_loopback["ip_address"] = input("What IP address? ")
 new_loopback["mask"] = input("What network mask? ")
-
-host = 'sandbox-iosxe-latest-1.cisco.com'
-user = 'admin'
-password = 'C1sco12345'
-netconf_port = 830
 
 # Create the NETCONF data payload for this interface
 netconf_data = netconf_interface_template.format(

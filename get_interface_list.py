@@ -29,6 +29,11 @@ import xmltodict
 import xml.dom.minidom
 
 
+host = 'sandbox-iosxe-latest-1.cisco.com'
+user = 'admin'
+password = 'C1sco12345'
+netconf_port = 830
+
 # Get the absolute path for the directory where this file is located "here"
 here = os.path.abspath(os.path.dirname(__file__))
 
@@ -77,9 +82,17 @@ interfaces = netconf_data["interfaces"]["interface"]
 print("The interface status of the device is: ")
 # Loop over interfaces and report status
 for interface in interfaces:
-    print("Interface {} enabled status is {}".format(
-            interface["name"],
-            interface["enabled"]
+    if (interface["enabled"]):
+
+        print("Interface {} enabled status is {}".format(
+                interface["name"],
+                interface["enabled"]
+                )
             )
-        )
+        if (interface["enabled"]):
+            try:
+                print(interface["description"])
+            except:
+                print("no description")
+
 print("\n")
