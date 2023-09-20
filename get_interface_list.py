@@ -89,10 +89,16 @@ for interface in interfaces:
                 interface["enabled"]
                 )
             )
-        if (interface["enabled"]):
-            try:
-                print(interface["description"])
-            except:
-                print("no description")
-
+        
+        try:
+            print("Interface {} has description {}".format( 
+                interface["name"],
+                interface["description"]
+                )
+            )
+        except:
+             print("Interface {} has no description".format(
+                interface["name"]
+                )
+            )
 print("\n")
