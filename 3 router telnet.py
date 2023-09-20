@@ -37,3 +37,4 @@ for ip in routerlist:
     f.write(output.decode('ascii'))
     f.close
 
+
