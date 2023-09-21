@@ -11,7 +11,8 @@ deviceauth = { 'device_type':  'cisco_ios',
     'username': 'sntuser',
     'password': 'Ilovenetworks99',
     'secret': 'cisco',  
-    'fast_cli': 'false'
+    'fast_cli': 'false',
+    'session_log': 'netmiko_session.log'
     }
 
 # Jinja enviroment 
@@ -37,11 +38,9 @@ for host in config_data:
     deviceauth.update (host=config_data[host]['mgmt_ip'])
     device_connection = netmiko.ConnectHandler(**deviceauth)
     device_connection.enable()
-    device_connection.send_config_set
+    #device_connection.send_config_set
     result = device_connection.send_config_from_file(f'./j2-config-files/{host}-config-file.cfg')
     print(result)
-    #device_connection.find_prompt()
-    time.sleep(1)
     result = device_connection.save_config() 
     print(result)
     device_connection.disconnect()

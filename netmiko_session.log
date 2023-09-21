@@ -1,0 +1,28 @@
+
+R3#
+R3#terminal width 511
+R3#terminal length 0
+R3#
+R3#
+R3#
+R3#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R3(config)#
+R3(config)#hostname R3
+R3(config)#interface loopback150
+R3(config-if)# description *** Template loopback150 ***
+R3(config-if)# ip address 3.3.3.100 255.255.255.255
+R3(config-if)#
+R3(config-if)#interface loopback200
+R3(config-if)# description *** Template loopback200 ***
+R3(config-if)# ip address 3.3.3.200 255.255.255.255
+R3(config-if)#
+R3(config-if)#end
+R3#
+R3#
+R3#
+R3#write mem
+Building configuration...
+[OK]
+R3#
+R3#exit
