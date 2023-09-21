@@ -1,0 +1,30 @@
+R1:
+    hostname: R1
+    interfaces:
+        loopback150:
+            ipv4: 1.1.1.100
+            mask: 255.255.255.255
+        loopback200:
+            ipv4: 1.1.1.200
+            mask: 255.255.255.255
+
+
+R2:
+    hostname: R2
+    interfaces:
+        loopback150:
+            ipv4: 2.2.2.100
+            mask: 255.255.255.255
+        loopback200:
+            ipv4: 2.2.2.200
+            mask: 255.255.255.255            
+
+R3:
+    hostname: R3
+    interfaces:
+        loopback150:
+            ipv4: 3.3.3.100
+            mask: 255.255.255.255
+        loopback200:
+            ipv4: 3.3.3.200
+            mask: 255.255.255.255 
