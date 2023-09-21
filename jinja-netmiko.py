@@ -38,7 +38,6 @@ for host in config_data:
     deviceauth.update (host=config_data[host]['mgmt_ip'])
     device_connection = netmiko.ConnectHandler(**deviceauth)
     device_connection.enable()
-    #device_connection.send_config_set
     result = device_connection.send_config_from_file(f'./j2-config-files/{host}-config-file.cfg')
     print(result)
     result = device_connection.save_config() 
