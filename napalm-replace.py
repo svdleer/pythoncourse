@@ -7,7 +7,7 @@ password = 'Ilovenetworks99'
 
 driver = get_network_driver('ios')
 
-iosvl2 = driver('10.99.99.15', user, password,timeout=30, optional_args={"session_log":"debugsession", "read_timeout_override": 90})
+iosvl2 = driver('10.99.99.15', user, password,timeout=30, optional_args={"read_timeout_override": 90})
 iosvl2.open()
 
 ios_output = iosvl2.get_facts()
