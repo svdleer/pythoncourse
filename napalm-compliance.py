@@ -13,6 +13,7 @@ iosvl2.open()
 ios_output = iosvl2.get_facts()
 print(json.dumps(ios_output, indent=4))
 
+ios_output = iosvl2.get_facts()
 
 
 iosvl2.load_replace_candidate('./replace-cfg.cfg')
@@ -29,4 +30,5 @@ else:
     print("Discarding ...")
     iosvl2.discard_config()
 
-iosvl2.close()
+
+# not finished
