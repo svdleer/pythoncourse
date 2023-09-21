@@ -1,5 +1,6 @@
 R1:
     hostname: R1
+    mgmt_ip: 10.99.99.11
     interfaces:
         loopback150:
             ipv4: 1.1.1.100
@@ -8,9 +9,9 @@ R1:
             ipv4: 1.1.1.200
             mask: 255.255.255.255
 
-
 R2:
     hostname: R2
+    mgmt_ip: 10.99.99.12
     interfaces:
         loopback150:
             ipv4: 2.2.2.100
@@ -21,6 +22,7 @@ R2:
 
 R3:
     hostname: R3
+    mgmt_ip: 10.99.99.13
     interfaces:
         loopback150:
             ipv4: 3.3.3.100
