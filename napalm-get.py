@@ -13,4 +13,4 @@ iosvl2.open()
 
 ios_output = iosvl2.get_facts()
 print(json.dumps(ios_output, indent=4))
-
+iosvl2.close()

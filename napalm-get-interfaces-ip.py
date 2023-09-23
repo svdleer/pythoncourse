@@ -1,42 +1,36 @@
+# Gets the interfaces ip from router, and puts them in usable napalm compliant YAML output.
+
 import json
+import sys
 import yaml
-import pprint
-yaml.version = "1.1"
 from napalm import get_network_driver
 
-user = 'sntuser'
-password = 'Ilovenetworks99'
 
+user = 'admin'
+password = 'C1sco12345'
+host = 'sandbox-iosxe-latest-1.cisco.com'
 
-driver = get_network_driver('ios')
+driver = get_network_driver('ios') 
 
-iosvl2 = driver('10.99.99.15', user, password)
+iosvl2 = driver(host, user, password)
 iosvl2.open()
 
-#yamltemplate =  [ {'get_interfaces_ip'.  } ]
-ios_output = iosvl2.get_interfaces_ip()
+json_interfaces = iosvl2.get_interfaces_ip()
+
+preyaml_compliance = [{ 'get_interfaces_ip': json_interfaces }]
+
+yaml_compliance = yaml.dump(preyaml_compliance, explicit_start=True, indent=3)
+
+# Create YAML compliance file
+
+try: 
+        yamloutput = open("./yaml-compliance-outoput.txt", "w")
+        yamloutput.write(yaml_compliance)
+        yamloutput.close
+
+except:
+        print("Error while writing yaml compliance file\n")
 
 
 
-
-
-compliance_dict={'get_interfaces_ip': {}}
-
-for key, val in dict.items(ios_output):
-        compliance_dict['get_interfaces_ip'][key] = val
-
-print(yaml.dump(ios_output, default_flow_style=True,explicit_start=True))
-
-#test123 = {**yamltemplate, **ios_output}
-#yamltemplate.update['get_interfaces_ip'] = ios_output
-
-
-#print (yaml.dump(yamltemplate))
-
-#compliance_dict.update['get_interfaceip'] = ios_output
-
-#print(yaml.dump(compliance,explicit_start = "True"))
-
-#print (yaml_data)
-
-#broken will be fixed after monday
+iosvl2.close()

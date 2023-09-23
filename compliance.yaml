@@ -1,10 +1,30 @@
 ---
-- get_interfaces_ip:
-   GigabitEthernet0/0:
-      ipv4:
-         10.99.99.15:
-            prefix_length: 24
-   Loopback113:
-      ipv4:
-         1.1.1.2:
-            prefix_length: 32
+-  get_interfaces_ip:
+      GigabitEthernet1:
+         ipv4:
+            10.10.20.49:
+               prefix_length: 24
+      Loopback0:
+         ipv4:
+            10.0.0.1:
+               prefix_length: 24
+      Loopback10:
+         ipv4:
+            192.168.10.1:
+               prefix_length: 24
+      Loopback100:
+         ipv4:
+            200.1.1.1:
+               prefix_length: 32
+      Loopback109:
+         ipv4:
+            10.255.255.9:
+               prefix_length: 24
+      Loopback137:
+         ipv4:
+            1.2.3.4:
+               prefix_length: 24
+      VirtualPortGroup0:
+         ipv4:
+            192.168.1.1:
+               prefix_length: 24
