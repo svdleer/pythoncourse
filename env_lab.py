@@ -93,6 +93,16 @@ if ENVIRONMENT_IN_USE == "sandbox":
         "ssh_port": 8181
     }
 
+    # Values for the Always On IOS XE Sandbox
+    # IOS_XE_3 = {
+     #   "host": "sandbox-iosxe-recomm-1.cisco.com",
+      #  "username": "developer",
+       # "password": "C1sco12345",
+        #"netconf_port": 830,
+        #"restconf_port": 443,
+        #"ssh_port": 22
+    #}
+
 elif ENVIRONMENT_IN_USE == "express":
     DNA_CENTER = {
         "host": "sandboxdnac2.cisco.com",
